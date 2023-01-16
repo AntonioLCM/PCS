@@ -26,4 +26,5 @@ class EvacModel(mesa.Model):
 
     def step(self):
         # Scheduler will execute every agent's step() method
+        # schedule.agents !!!
         self.schedule.step()
