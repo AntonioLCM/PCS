@@ -7,6 +7,9 @@ import mesa
 from enum import IntEnum
 
 
+EXITS = [(4, 4), (5, 4)]
+
+
 class State(IntEnum):
     HEALTHY = 0
     INJURED = 1
@@ -19,6 +22,7 @@ class PersonAgent(mesa.Agent):
 
         # Define state etc. below
         self.state = State.HEALTHY
+        self.wall = False
 
     def _sees_exit(self):
         # Check if there is an exit in neighborhood with range max_vis (visible
@@ -34,5 +38,9 @@ class PersonAgent(mesa.Agent):
         self.model.grid.move_agent(self, self.random.choice(possible_empty))
 
     def step(self):
-        # Define step behavior
-        self.move()
+        if self.pos in EXITS:
+            self.model.grid.remove_agent(self)
+            self.model.schedule.remove(self)
+        else:
+            # Define step behavior
+            self.move()
