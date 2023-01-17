@@ -33,9 +33,11 @@ class PersonAgent(mesa.Agent):
     def move(self):
         # Move to random empty neighboring cell
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
+        # This could probably be more efficient using numpy somehow..
         possible_empty = [cell for cell in neighbor_cells
                           if self.model.grid.is_cell_empty(cell)]
-        self.model.grid.move_agent(self, self.random.choice(possible_empty))
+        if len(possible_empty) != 0:
+            self.model.grid.move_agent(self, self.random.choice(possible_empty))
 
     def step(self):
         if self.pos in EXITS:
