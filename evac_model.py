@@ -4,7 +4,15 @@
 """
 
 import mesa
+import numpy as np
 from person_agent import PersonAgent
+from wall_agent import WallAgent
+
+
+WALLS = [(0, 4), (1, 4), (2, 4), (3, 4),
+         (6, 4), (7, 4), (8, 4), (9, 4)]
+
+EMPTY = [(x, y) for x in range(10) for y in range(4)]
 
 
 class EvacModel(mesa.Model):
@@ -16,13 +24,21 @@ class EvacModel(mesa.Model):
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
 
-        # Initialize agents in a loop probably
+        # Initialize walls
+        for pos in WALLS:
+            w = WallAgent(self, pos)
+            self.schedule.add(w)
+            self.grid.position_agent(w, pos[0], pos[1])
+
+        # Initialize persons in a loop
         for uid in range(self.num_agents):
             p = PersonAgent(uid, self)
             self.schedule.add(p)
 
             # Randomly place agent in grid
-            self.grid.position_agent(p, 'random')
+            r_id = np.random.randint(0, len(EMPTY))
+            x, y = EMPTY.pop(r_id)
+            self.grid.position_agent(p, x, y)
 
     def step(self):
         # Scheduler will execute every agent's step() method
