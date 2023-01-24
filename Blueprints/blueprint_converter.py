@@ -8,7 +8,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
-def image_to_array():
+def image_to_array(image='Resized Blueprints/blueprint1_resized.png'):
     """
     function: this function transforms a given blueprint (image) with walls 
     and returns an array with the locations of every wall (empty = 0, wall = 1) 
@@ -17,7 +17,7 @@ def image_to_array():
     returns: img_array, (x,y) 
     """
     
-    img = Image.open('blueprint1.png').convert('L')             # open image
+    img = Image.open(image).convert('L')                        # open image
     img_array = np.array(img)                                   # convert to array
     img_array = ~img_array                                      # invert image
     img_array[img_array > 0] = 1
@@ -28,27 +28,28 @@ def image_to_array():
 
     return img_array#, img_shape
 
-def resize_image(img, basewidth):
+def resize_image(image='Original Blueprints/blueprint1.png'):
     """
     function: this function takes a given image and required width
     and resizes it with respect to the required width.
     input: img, basewidth
     return: resized_image 
     """
-    img = Image.open('blueprint1.png')                          # open image    
+    basewidth = 300
+    img = Image.open(image)                                     # open image    
     wpercent = (basewidth/float(img.size[0]))                    
     hsize = int((float(img.size[1]) * float(wpercent)))         
     resized_image = img.resize((basewidth, hsize),              
                                 Image.LANCZOS)
-    resized_image.save('blueprint1_resized.png')                # save image
+    resized_image.save('Resized Blueprints/blueprint1_resized.png')                # save image
 
     return resized_image
 
-def get_wall_locations(save=0):
+def get_wall_locations(save=1):
     """
     function: this function takes an binary array of an image and converts
     it to a list of coordinates [(x1,y1), (xn,yn)] of the location of the wall.
-    input: img_array
+    input: img_array, save
     return: list_wall
     """
     img_array = image_to_array()                               
@@ -61,9 +62,9 @@ def get_wall_locations(save=0):
     if save == 1:                                               # save coordinates
         with open("wall_cood.txt", 'w') as f:                   # to save file
             for line in list_wall:                              # wall_cood.txt
-                f.write(f"{line},")     
+                f.write(f"{line}\n")     
 
-    print(list_wall)
+    #print(list_wall)
     return list_wall
 
 #def create_agent_locations():
