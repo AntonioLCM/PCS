@@ -8,7 +8,9 @@ import numpy as np
 from person_agent import PersonAgent
 from wall_agent import WallAgent
 
-# make a list of integer tuples from the wall_cood txt file, make sure to run blueprint_converter.py to get the correct wall_cood.txt file in your directory
+# make a list of integer tuples from the wall_cood txt file, make sure to run
+# blueprint_converter.py to get the correct wall_cood.txt file in your
+# directory
 with open('wall_cood2.txt') as f:
     mylist = [eval(i.strip()) for i in f]
 WALLS = mylist
