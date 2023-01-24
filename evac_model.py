@@ -11,7 +11,7 @@ from wall_agent import WallAgent
 # make a list of integer tuples from the wall_cood txt file, make sure to run
 # blueprint_converter.py to get the correct wall_cood.txt file in your
 # directory
-with open('wall_cood2.txt') as f:
+with open('Blueprints/wall_cood.txt') as f:
     mylist = [eval(i.strip()) for i in f]
 WALLS = mylist
 
