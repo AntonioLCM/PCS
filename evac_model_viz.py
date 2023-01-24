@@ -30,9 +30,9 @@ def agent_portrayal(agent):
     return portrayal
 
 
-grid = mesa.visualization.CanvasGrid(agent_portrayal, 227, 300, 1000, 1000)
+grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid], "Evacuation Model", {"N": 5, "width": 227, "height": 300}
+    EvacModel, [grid], "Evacuation Model", {"N": 5, "width": 151, "height": 200}
 )
 server.port = 8521  # The default
 server.launch()
