@@ -34,14 +34,14 @@ class EvacModel(mesa.Model):
             self.grid.position_agent(w, pos[0], pos[1])
 
         # Initialize persons in a loop
-        for uid in range(self.num_agents):
-            p = PersonAgent(uid, self)
-            self.schedule.add(p)
+        # for uid in range(self.num_agents):
+        #     p = PersonAgent(uid, self)
+        #     self.schedule.add(p)
 
-            # Randomly place agent in grid
-            r_id = np.random.randint(0, len(EMPTY))
-            x, y = EMPTY.pop(r_id)
-            self.grid.position_agent(p, x, y)
+        #     # Randomly place agent in grid
+        #     r_id = np.random.randint(0, len(EMPTY))
+        #     x, y = EMPTY.pop(r_id)
+        #     self.grid.position_agent(p, x, y)
 
     def step(self):
         # Scheduler will execute every agent's step() method
