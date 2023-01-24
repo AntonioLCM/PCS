@@ -37,7 +37,7 @@ def resize_image(image='Original Blueprints/blueprint1.png'):
     input: img, basewidth
     return: resized_image
     """
-    basewidth = 200
+    basewidth = 300
     img = Image.open(image)                                     # open image    
     wpercent = (basewidth/float(img.size[0]))                    
     hsize = int((float(img.size[1]) * float(wpercent)))         
