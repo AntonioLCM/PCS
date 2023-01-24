@@ -38,14 +38,14 @@ def resize_image(image='Original Blueprints/blueprint1.png'):
     return: resized_image
     """
     basewidth = 300
-    img = Image.open(image)                                     # open image    
-    wpercent = (basewidth/float(img.size[0]))                    
-    hsize = int((float(img.size[1]) * float(wpercent)))         
-    resized_image = img.resize((basewidth, hsize),              
-                                Image.BICUBIC)
+    img = Image.open(image)                                     # open image
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1]) * float(wpercent)))
+    resized_image = img.resize((basewidth, hsize),
+                               Image.BICUBIC)
 
     # save image
-    resized_image.save('Resized Blueprints/blueprint1_resized.png')  
+    resized_image.save('Resized Blueprints/blueprint1_resized.png')
 
     return resized_image
 
