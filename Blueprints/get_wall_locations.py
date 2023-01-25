@@ -15,7 +15,7 @@ def get_wall_locations(img_array, save=1):
     input: img_array, save
     return: list_wall
     """
-    
+
     list_wall = []
     for n, x in enumerate(img_array):                   # loop through array
         for m, y in enumerate(x):                       # and find all cood
