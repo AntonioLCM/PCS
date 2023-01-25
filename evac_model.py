@@ -15,7 +15,10 @@ with open('Blueprints/wall_cood.txt') as f:
     mylist = [eval(i.strip()) for i in f]
 WALLS = mylist
 
-# Find all empty spaces within building (4, 147), (4, 196) on the image.
+# Find all empty spaces within building. (building is smaller than image grid)
+# TODO: remove inaccesible SPACES from EMPTY as well.. There should be
+#       a better way than finding the coordinates and hardcoding them..
+#       probably
 EMPTY = list(set([(x, y) for x in range(4, 147) for y in range(4, 196)])
              - set(WALLS))
 
