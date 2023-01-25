@@ -9,7 +9,8 @@ from wall_agent import WallAgent
 from person_agent import PersonAgent
 
 
-# Placeholder...
+# Define what the agents should look like in the visualization dependent
+# on their type.
 def agent_portrayal(agent):
     portrayal = {
         "Filled": "true",
