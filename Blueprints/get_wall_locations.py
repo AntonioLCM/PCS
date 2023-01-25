@@ -8,6 +8,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def get_wall_locations(img_array, save=1):
     """
     function: this function takes an binary array of an image and converts
