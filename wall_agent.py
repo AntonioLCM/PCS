@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: A class for 'wall agents' to be used in an abm within
+                 Mesa. Walls can't do much.
 """
 
 import mesa

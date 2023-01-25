@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: The (agent based) model definition for an evacuation
+                 simulation using Mesa.
 """
 
 import mesa

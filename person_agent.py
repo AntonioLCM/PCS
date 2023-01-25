@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: A class for 'person agents' to be used in an abm within
+                 Mesa.
 """
 
 import mesa
@@ -10,6 +11,7 @@ from enum import IntEnum
 EXITS = [(4, 4), (5, 4)]
 
 
+# TODO: Something with these states.. maybe at some point
 class State(IntEnum):
     HEALTHY = 0
     INJURED = 1
@@ -34,10 +36,12 @@ class PersonAgent(mesa.Agent):
         # Move to random empty neighboring cell
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
         # This could probably be more efficient using numpy somehow..
+        # TODO: ^
         possible_empty = [cell for cell in neighbor_cells
                           if self.model.grid.is_cell_empty(cell)]
         if len(possible_empty) != 0:
-            self.model.grid.move_agent(self, self.random.choice(possible_empty))
+            self.model.grid.move_agent(self,
+                                       self.random.choice(possible_empty))
 
     def step(self):
         if self.pos in EXITS:

@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: Initializes a webserver and uses JavaScript to visualize
+                 the evacuation model.
 """
 
 import mesa
@@ -35,5 +36,5 @@ grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
 server = mesa.visualization.ModularServer(
     EvacModel, [grid], "Evacuation Model", {"N": 500, "width": 151, "height": 200}
 )
-server.port = 8521  # The default
+server.port = 8521
 server.launch()
