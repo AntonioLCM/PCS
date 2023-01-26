@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: Initializes a webserver and uses JavaScript to visualize
+                 the evacuation model.
 """
 
 import mesa
@@ -9,7 +10,8 @@ from wall_agent import WallAgent
 from person_agent import PersonAgent
 
 
-# Placeholder...
+# Define what the agents should look like in the visualization dependent
+# on their type.
 def agent_portrayal(agent):
     portrayal = {
         "Filled": "true",
@@ -32,7 +34,7 @@ def agent_portrayal(agent):
 
 grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid], "Evacuation Model", {"N": 5, "width": 151, "height": 200}
+    EvacModel, [grid], "Evacuation Model", {"N": 500, "width": 151, "height": 200}
 )
-server.port = 8521  # The default
+server.port = 8521
 server.launch()

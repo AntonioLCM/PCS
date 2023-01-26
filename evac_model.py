@@ -1,6 +1,7 @@
 """
-    Team:
-    Module description:
+    Team: Eight minus one
+    Description: The (agent based) model definition for an evacuation
+                 simulation using Mesa.
 """
 
 import mesa
@@ -15,7 +16,12 @@ with open('Blueprints/wall_cood.txt') as f:
     mylist = [eval(i.strip()) for i in f]
 WALLS = mylist
 
-EMPTY = [(x, y) for x in range(10) for y in range(4)]
+# Find all empty spaces within building. (building is smaller than image grid)
+# TODO: remove inaccesible SPACES from EMPTY as well.. There should be
+#       a better way than finding the coordinates and hardcoding them..
+#       probably
+EMPTY = list(set([(x, y) for x in range(4, 147) for y in range(4, 196)])
+             - set(WALLS))
 
 
 class EvacModel(mesa.Model):
@@ -34,14 +40,15 @@ class EvacModel(mesa.Model):
             self.grid.position_agent(w, pos[0], pos[1])
 
         # Initialize persons in a loop
-        # for uid in range(self.num_agents):
-        #     p = PersonAgent(uid, self)
-        #     self.schedule.add(p)
+        # Random placement on empty cell within 'building'
+        for uid in range(self.num_agents):
+            p = PersonAgent(uid, self)
+            self.schedule.add(p)
 
-        #     # Randomly place agent in grid
-        #     r_id = np.random.randint(0, len(EMPTY))
-        #     x, y = EMPTY.pop(r_id)
-        #     self.grid.position_agent(p, x, y)
+            # Randomly place agent in grid
+            r_id = np.random.randint(0, len(EMPTY))
+            x, y = EMPTY.pop(r_id)
+            self.grid.position_agent(p, x, y)
 
     def step(self):
         # Scheduler will execute every agent's step() method

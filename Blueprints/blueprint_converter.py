@@ -12,6 +12,7 @@ from get_wall_locations import *
 from image_to_array import *
 from resize_image import *
 
+
 def main():
     img_array = image_to_array()
     get_wall_locations(img_array)
@@ -34,5 +35,9 @@ def main():
 
     #resize_image()
     #image_to_array()
+
+    # resize_image()
+    # image_to_array()
+
 
 main()
