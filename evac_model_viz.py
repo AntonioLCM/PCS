@@ -33,8 +33,12 @@ def agent_portrayal(agent):
 
 
 grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
+
+# chart = mesa.visualization.ChartModule([{"Label": "agent_count",
+#                                          "Color": "Black"}],
+#                                        data_collector_name='datacollector')
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid], "Evacuation Model", {"N": 500, "width": 151, "height": 200}
+    EvacModel, [grid], "Evacuation Model", {"N": 5000, "width": 151, "height": 200}
 )
 server.port = 8521
 server.launch()
