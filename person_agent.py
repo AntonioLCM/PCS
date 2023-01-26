@@ -8,7 +8,9 @@ import mesa
 from enum import IntEnum
 
 
-EXITS = [(4, 4), (5, 4)]
+EXITS = [(70, 27), (71, 27), (72, 27), (73, 27), (61, 34), (62, 34),
+         (79, 156), (80, 156), (81, 156), (82, 156), (83, 156),
+         (76, 171), (77, 171), (78, 171), (79, 171)]
 
 
 # TODO: Something with these states.. maybe at some point
