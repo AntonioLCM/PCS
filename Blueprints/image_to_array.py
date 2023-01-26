@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def image_to_array(image='Resized Blueprints/blueprint1_resized.png'):
+def image_to_array(image='Original Blueprints/blueprint1_remade.png'):
     """
     function: this function transforms a given blueprint (image) with walls
     and returns an array with the locations of every wall (empty = 0, wall = 1)

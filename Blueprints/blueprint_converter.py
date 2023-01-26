@@ -17,7 +17,8 @@ def main():
     get_wall_locations(img_array)
 
     """
-    param: resampling, basewidth
+    function: resize_image
+    parameters: resampling, basewidth
 
     resampling:
     resize takes resampling parameter with three resampling methods
@@ -30,7 +31,7 @@ def main():
     basewidth takes an integer to scale image to
     default = 300
     """
-    
+
     #resize_image()
     #image_to_array()
 
