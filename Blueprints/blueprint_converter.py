@@ -26,11 +26,11 @@ def main():
     NEAREST - resampling = 0
     BICUBIC - resampling = 1
     LANCZOS - resampling = 2
-    default = 0
+    default = 1
 
     basewidth:
     basewidth takes an integer to scale image to
-    default = 300
+    default = 200
     """
 
     #resize_image()
