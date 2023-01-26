@@ -9,9 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def resize_image(image='Original Blueprints/blueprint1.png',
+def resize_image(image='Original Blueprints/blueprint1_remade.png',
                  resampling=1,
-                 basewidth=300):
+                 basewidth=200):
     """
     function: this function takes a given image and required width
     and resizes it with respect to the required width.
