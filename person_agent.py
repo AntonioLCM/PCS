@@ -49,6 +49,7 @@ class PersonAgent(mesa.Agent):
         if self.pos in EXITS:
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)
+            self.model.person_agents -= 1
         else:
             # Define step behavior
             self.move()
