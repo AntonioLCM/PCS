@@ -62,3 +62,10 @@ class EvacModel(mesa.Model):
         # schedule.agents !!!
         self.datacollector.collect(self)
         self.schedule.step()
+        
+    def run_model(self, steps):
+        # Because the model has no inherent end conditions,
+        # the user must specify how many steps to run it for.
+        for i in range(steps):
+            self.step()
+            
