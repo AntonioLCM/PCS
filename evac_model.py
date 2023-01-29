@@ -28,13 +28,17 @@ EMPTY = list(set([(x, y) for x in range(4, 147) for y in range(4, 196)])
 class EvacModel(mesa.Model):
     def __init__(self, N, width, height):
         self.person_agents = N
+        self.counter_EXIT1 = 0
+        self.counter_EXIT2 = 0
+        self.counter_EXIT3 = 0
+        self.counter_EXIT4 = 0
         # Default maximum visible distance
         self.max_vis = 5
         # Activate all agents in random order each step
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
         self.datacollector = DataCollector(model_reporters={
-                                           "agent_count": lambda m: m.person_agents})
+                                           "Exit1": lambda m: m.counter_EXIT1, "Exit2": lambda m: m.counter_EXIT2, "Exit3": lambda m: m.counter_EXIT3, "Exit4": lambda m: m.counter_EXIT4})
 
         # Initialize walls
         for pos in WALLS:
