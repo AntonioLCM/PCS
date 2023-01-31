@@ -43,6 +43,13 @@ class PersonAgent(mesa.Agent):
             self.model.grid.move_agent(self,
                                        self.random.choice(possible_empty))
 
+    def visible_arrows(self):
+        vis_arrows = []
+        for arrow in self.arrows:
+            if arrow.is_in_range(self.pos, self.model.max_vis):
+                vis_arrows.append(arrow)
+        return vis_arrows
+
     def step(self):
         if self.pos in EXIT1:
             self.model.grid.remove_agent(self)
