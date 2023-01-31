@@ -5,6 +5,7 @@
 """
 
 import mesa
+from generate_arrow_list import generate_arrow_list
 
 
 EXIT1 = [(70, 18), (71, 18), (72, 18), (73, 18)]
@@ -13,6 +14,8 @@ EXIT3 = [(79, 158), (80, 158), (81, 158), (82, 158), (83, 158)]
 EXIT4 = [(76, 181), (77, 181), (78, 181), (79, 181)]
 ALL_EXITS = EXIT1 + EXIT2 + EXIT3 + EXIT4
 
+ARROWS = generate_arrow_list(ALL_EXITS)
+
 
 class PersonAgent(mesa.Agent):
     def __init__(self, unique_id, model):
@@ -20,7 +23,8 @@ class PersonAgent(mesa.Agent):
         super().__init__(unique_id, model)
 
         # Define state etc. below
-        self.wall = False
+        self.dir = None
+        self.arrows = ARROWS
 
     def _sees_exit(self):
         # Check if there is an exit in neighborhood with range max_vis (visible
