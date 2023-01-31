@@ -5,19 +5,13 @@
 """
 
 import mesa
-from enum import IntEnum
 
 
 EXIT1 = [(70, 18), (71, 18), (72, 18), (73, 18)]
 EXIT2 = [(61, 33), (62, 33)]
 EXIT3 = [(79, 158), (80, 158), (81, 158), (82, 158), (83, 158)]
 EXIT4 = [(76, 181), (77, 181), (78, 181), (79, 181)]
-ALLEXITS = EXIT1 + EXIT2 + EXIT3 + EXIT4
-
-# TODO: Something with these states.. maybe at some point
-class State(IntEnum):
-    HEALTHY = 0
-    INJURED = 1
+ALL_EXITS = EXIT1 + EXIT2 + EXIT3 + EXIT4
 
 
 class PersonAgent(mesa.Agent):
@@ -26,7 +20,6 @@ class PersonAgent(mesa.Agent):
         super().__init__(unique_id, model)
 
         # Define state etc. below
-        self.state = State.HEALTHY
         self.wall = False
 
     def _sees_exit(self):
