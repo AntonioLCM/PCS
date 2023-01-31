@@ -8,9 +8,10 @@ import mesa
 from enum import IntEnum
 
 
-EXITS = [(70, 18), (71, 18), (72, 18), (73, 18), (61, 33), (62, 33),
-         (79, 158), (80, 158), (81, 158), (82, 158), (83, 158),
-         (76, 181), (77, 181), (78, 181), (79, 181)]
+EXIT1 = [(70, 18), (71, 18), (72, 18), (73, 18)]
+EXIT2 = [(61, 33), (62, 33)]
+EXIT3 = [(79, 158), (80, 158), (81, 158), (82, 158), (83, 158)]
+EXIT4 = [(76, 181), (77, 181), (78, 181), (79, 181)]
 
 
 # TODO: Something with these states.. maybe at some point
@@ -46,9 +47,25 @@ class PersonAgent(mesa.Agent):
                                        self.random.choice(possible_empty))
 
     def step(self):
-        if self.pos in EXITS:
+        if self.pos in EXIT1:
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)
+            self.model.person_agents -= 1
+            self.model.counter_EXIT1 += 1
+        elif self.pos in EXIT2:
+            self.model.grid.remove_agent(self)
+            self.model.schedule.remove(self)
+            self.model.person_agents -= 1
+            self.model.counter_EXIT2 += 1
+        elif self.pos in EXIT3:
+            self.model.grid.remove_agent(self)
+            self.model.schedule.remove(self)
+            self.model.person_agents -= 1
+            self.model.counter_EXIT3 += 1
+        elif self.pos in EXIT4:
+            self.model.grid.remove_agent(self)
+            self.model.schedule.remove(self)
+            self.model.person_agents -= 1
+            self.model.counter_EXIT4 += 1
         else:
-            # Define step behavior
             self.move()
