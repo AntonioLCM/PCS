@@ -24,7 +24,9 @@ def image_to_array(image='Resized Blueprints/blueprint1_resized.png'):
     img_array[img_array > 0] = 1
     # img_shape = np.shape(img_array)                   # give image shape
 
+    img_list = img_array.tolist()
+    
     plt.imshow(img_array)                               # check input with plot
     plt.show()
+    return img_list
 
-    return img_array
