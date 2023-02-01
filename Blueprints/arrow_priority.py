@@ -18,7 +18,7 @@ def arrow_priority(exit_priority):
 
     distance = abs(x - n) + abs(y - m)                  # manhatten distance
 
-    return (x, y, distance)
+    return (x, y), distance
 
 
 def exit_priority(arrow, exits):
