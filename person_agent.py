@@ -9,10 +9,10 @@ from generate_arrow_list import generate_arrow_list
 from Blueprints.arrow_priority import arrow_priority
 
 
-EXIT1 = [(70, 18), (71, 18), (72, 18), (73, 18)]
-EXIT2 = [(61, 33), (62, 33)]
-EXIT3 = [(79, 158), (80, 158), (81, 158), (82, 158), (83, 158)]
-EXIT4 = [(76, 181), (77, 181), (78, 181), (79, 181)]
+EXIT1 = [(18,70), (18,71), (18,72), (18,73)]
+EXIT2 = [(33,61), (33,62)]
+EXIT3 = [(158, 79), (158,80), (158, 81), (158,82), (158,83)]
+EXIT4 = [(181,76), (181,77), (181,78), (181,79)]
 ALL_EXITS = EXIT1 + EXIT2 + EXIT3 + EXIT4
 
 ARROWS = generate_arrow_list(ALL_EXITS)
