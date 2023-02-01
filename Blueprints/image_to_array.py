@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def image_to_array(image='Resized Blueprints/blueprint1_resized.png'):
+def image_to_array(image='Blueprints/Resized Blueprints/blueprint1_resized.png'):
     """
     function: this function transforms a given blueprint (image) with walls
     and returns an array with the locations of every wall (empty = 0, wall = 1)
@@ -24,7 +24,9 @@ def image_to_array(image='Resized Blueprints/blueprint1_resized.png'):
     img_array[img_array > 0] = 1
     # img_shape = np.shape(img_array)                   # give image shape
 
-    plt.imshow(img_array)                               # check input with plot
-    plt.show()
+    img_list = img_array.tolist()
+    
+    # plt.imshow(img_array)                               # check input with plot
+    # plt.show()
+    return img_list
 
-    return img_array
