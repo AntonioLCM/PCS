@@ -28,7 +28,7 @@ class PersonAgent(mesa.Agent):
         self.dir = None
         self.arrows = ARROWS
         self.best_ar = None
-        self.path = pf.main((40, 40), (44, 58))
+        self.path = pf.main((40, 40), (44, 45))
 
     def _sees_exit(self):
         # Check if there is an exit in neighborhood with range max_vis (visible
