@@ -40,7 +40,7 @@ chart = mesa.visualization.ChartModule([{"Label": "Exit1", "Color": "Black"},
                                         {"Label": "Exit4", "Color": "yellow"}],
                                        data_collector_name='datacollector')
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid, chart], "Evacuation Model", {"N": 20,
+    EvacModel, [grid, chart], "Evacuation Model", {"N": 1000,
                                                    "width": 151,
                                                    "height": 200}
 )
