@@ -101,14 +101,13 @@ def astar(maze, start, end):
 
 
 def main():
-    
     grid = image_to_array()
 
     start = (70, 18)
     end = (30, 40)
 
     path = astar(grid, start, end)
-    print(path)
+    return path
 
 
 if __name__ == '__main__':
