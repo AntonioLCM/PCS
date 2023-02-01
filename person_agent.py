@@ -41,7 +41,8 @@ class PersonAgent(mesa.Agent):
         # best exit according to distance between arrow and exit and move
         # towards this exit. After passing the arrow keep moving in direction
         # of arrow.
-        pass
+        next_loc = self.path.pop()
+        self.model.grid.move_agent(self, next_loc)
 
     def pos_by_dir(self, direction):
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
