@@ -41,10 +41,10 @@ class PersonAgent(mesa.Agent):
         # of arrow.
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
 
-        if self.best_ar and self.pos == self.best_ar.pos:
-            self.dir = self.best_ar.dir
-            self.arrows.remove(self.best_ar)
-            self.best_ar = None
+        # if self.best_ar and self.pos == self.best_ar.pos:
+        #     self.dir = self.best_ar.dir
+        #     self.arrows.remove(self.best_ar)
+        #     self.best_ar = None
 
         if vis_ars := self.visible_arrows():
             self.best_ar = self.find_best_exit(vis_ars)
@@ -88,7 +88,6 @@ class PersonAgent(mesa.Agent):
                           if self.model.grid.is_cell_empty(cell)]
         x, y = self.pos
         i, j = loc[0] - x, loc[1] - y
-        print(i, j)
         if i >= 0 and j >= 0:
             possible_moves = [(x + 1, y + 1), (x + 1, y), (x, y + 1)]
         elif i >= 0 and j <= 0:
