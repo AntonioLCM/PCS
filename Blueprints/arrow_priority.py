@@ -1,7 +1,7 @@
 """
-file name: arrow_priority.py
-project: Project Smoke
-author: Abel John Oakley
+file    : arrow_priority.py
+team    : Team 8-1
+project : PCS
 """
 
 

@@ -1,7 +1,7 @@
 """
-file name: image_to_array.py
-project: Project Smoke
-author: Abel John Oakley
+file    : image_to_array.py
+team    : Team 8-1
+project : PCS
 """
 
 from PIL import Image

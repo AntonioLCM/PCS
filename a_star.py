@@ -101,15 +101,34 @@ def astar(maze, start, end):
 
 
 def main():
-    
+    #poppetje1 = [(94,133), (18,71)]
+    #poppetje2 = [(106,140), (18,71)]
+    #poppetje3 = [(79,98), (18,71)]
+    #poppetje4 = [(164,139), (181,77)]
+    #poppetje5 = [(157,63), (181,77)]
+    #poppetje6 = [(187,105), (181,77)]
+    #poppetje7 = [(57,140), (181,77)]
+    #poppetje8 = [(58,105), (181,77)]
+    #poppetje9 = [(70,105), (181,77)]
+    #poppetje10 = [(14,92), (18,71)]
+    #poppetje11 = [(44,83), (18,71)]
+    #poppetje12 = [(94,37), (181,77)]
+    #poppetje13 = [(128,16), (18,71)]
+    #poppetje14 = [(36,16), (181,77)]
+    #poppetje15 = [(68,17), (18,71)]
+    #poppetje16 = [(188,16), (18,71)]
+    #poppetje17 = [(70,45), (18,71)]
+
     grid = image_to_array()
 
-    start = (70, 18)
-    end = (30, 40)
+    #start = (70, 18)
+    #end = (30, 40)
 
-    path = astar(grid, start, end)
-    print(path)
+    path1 = astar(grid, (38,15), (181,78))
 
+    path2 = astar(grid, (130,17), (18,71))
+    print(path1)
+    print(path2)
 
 if __name__ == '__main__':
     main()

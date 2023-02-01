@@ -1,7 +1,7 @@
 """
-file name: blueprint_converter.py
-project: Project Smoke
-author: Abel John Oakley
+file    : blueprint_converter.py
+team    : Team 8-1
+project : PCS
 """
 
 from PIL import Image

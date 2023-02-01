@@ -1,7 +1,7 @@
 """
-file name: arrow_placement.py
-project: Project Smoke
-author: Abel John Oakley
+file    : arrow_placement.py
+team    : Team 8-1
+project : PCS
 """
 
 from arrow_priority import *

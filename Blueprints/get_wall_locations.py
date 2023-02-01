@@ -1,7 +1,7 @@
 """
-file name: get_wall_locations.py
-project: Project Smoke
-author: Abel John Oakley
+file    : get_wall_locations.py
+team    : Team 8-1
+project : PCS
 """
 
 from PIL import Image

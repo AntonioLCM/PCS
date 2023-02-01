@@ -1,5 +1,7 @@
 """
-arrow_location.py
+file    : arrow_location.py
+team    : Team 8-1
+project : PCS
 """
 def arrow_config(arrow_list_type=1):
     """

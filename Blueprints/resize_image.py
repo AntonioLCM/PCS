@@ -1,7 +1,7 @@
 """
-file name: resize_image.py
-project: Project Smoke
-author: Abel John Oakley
+file    : resize_image.py
+team    : Team 8-1
+project : PCS
 """
 
 from PIL import Image
