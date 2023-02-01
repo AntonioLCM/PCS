@@ -24,6 +24,10 @@ WALLS = mylist
 EMPTY = list(set([(x, y) for x in range(4, 147) for y in range(4, 196)])
              - set(WALLS))
 
+PERSON_LOCATIONS = [(93, 19), (136, 104), (106, 82), (140, 166), (63, 157)]
+                    # (187,105), (57,140), (58,105), (70,105), (14,92),
+                    # (44,83), (94,37), (128,16), (36,16), (68,17),
+                    # (188,16), (70,45)]
 
 class EvacModel(mesa.Model):
     def __init__(self, N, width, height):
@@ -56,7 +60,11 @@ class EvacModel(mesa.Model):
             # r_id = np.random.randint(0, len(EMPTY))
             # x, y = EMPTY.pop(r_id)
             # self.grid.position_agent(p, x, y)
-            self.grid.position_agent(p, 30, 40)
+            # x, y = PERSON_LOCATIONS[uid]
+            # print(uid, " ", x, y)
+
+            self.grid.position_agent(p, 40, 40)
+            # self.grid.position_agent(p, x, y)
 
     def step(self):
         # Scheduler will execute every agent's step() method
