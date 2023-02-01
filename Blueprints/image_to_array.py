@@ -26,7 +26,7 @@ def image_to_array(image='Blueprints/Resized Blueprints/blueprint1_resized.png')
 
     img_list = img_array.tolist()
     
-    plt.imshow(img_array)                               # check input with plot
-    plt.show()
+    # plt.imshow(img_array)                               # check input with plot
+    # plt.show()
     return img_list
 
