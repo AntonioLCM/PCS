@@ -33,7 +33,7 @@ class EvacModel(mesa.Model):
         self.counter_EXIT3 = 0
         self.counter_EXIT4 = 0
         # Default maximum visible distance
-        self.max_vis = 5
+        self.max_vis = 20
         # Activate all agents in random order each step
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
@@ -56,6 +56,7 @@ class EvacModel(mesa.Model):
             r_id = np.random.randint(0, len(EMPTY))
             x, y = EMPTY.pop(r_id)
             self.grid.position_agent(p, x, y)
+            # self.grid.position_agent(p, 33, 46)
 
     def step(self):
         # Scheduler will execute every agent's step() method

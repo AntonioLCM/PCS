@@ -34,11 +34,15 @@ def agent_portrayal(agent):
 
 grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
 
-chart = mesa.visualization.ChartModule([{"Label": "Exit1",
-                                         "Color": "Black"},{"Label": "Exit2","Color": "red"}, {"Label": "Exit3","Color": "green"},{"Label": "Exit4","Color": "yellow"}],
+chart = mesa.visualization.ChartModule([{"Label": "Exit1", "Color": "Black"},
+                                        {"Label": "Exit2", "Color": "red"},
+                                        {"Label": "Exit3", "Color": "green"},
+                                        {"Label": "Exit4", "Color": "yellow"}],
                                        data_collector_name='datacollector')
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid,chart], "Evacuation Model", {"N": 5000, "width": 151, "height": 200}
+    EvacModel, [grid, chart], "Evacuation Model", {"N": 20,
+                                                   "width": 151,
+                                                   "height": 200}
 )
 server.port = 8521
 server.launch()
