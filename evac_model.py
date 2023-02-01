@@ -33,7 +33,7 @@ class EvacModel(mesa.Model):
         self.counter_EXIT3 = 0
         self.counter_EXIT4 = 0
         # Default maximum visible distance
-        self.max_vis = 20
+        self.max_vis = 100
         # Activate all agents in random order each step
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
