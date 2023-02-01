@@ -41,18 +41,19 @@ class PersonAgent(mesa.Agent):
         # of arrow.
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
 
+        if self.best_ar and self.pos == self.best_ar.pos:
+            self.dir = self.best_ar.dir
+            self.arrows.remove(self.best_ar)
+            self.best_ar = None
+
         if vis_ars := self.visible_arrows():
             self.best_ar = self.find_best_exit(vis_ars)
-            if self.pos == self.best_ar.pos:
-                self.dir = self.best_ar.dir
-                self.arrows.remove(self.best_ar)
-                self.best_ar = None
-
             if self.best_ar and (new_pos := self.calc_move(self.best_ar.pos)):
                 self.model.grid.move_agent(self, new_pos)
         elif self.dir and (new_pos := self.pos_by_dir(self.dir)):
             self.model.grid.move_agent(self, new_pos)
         else:
+            self.dir = None
             # This could probably be more efficient using numpy somehow..
             # TODO: ^
             possible_empty = [cell for cell in neighbor_cells
