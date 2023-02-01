@@ -7,6 +7,7 @@
 import mesa
 from generate_arrow_list import generate_arrow_list
 from Blueprints.arrow_priority import arrow_priority
+import a_star as pf
 
 
 EXIT1 = [(70, 18), (71, 18), (72, 18), (73, 18)]
@@ -27,6 +28,7 @@ class PersonAgent(mesa.Agent):
         self.dir = None
         self.arrows = ARROWS
         self.best_ar = None
+        self.path = pf.main()
 
     def _sees_exit(self):
         # Check if there is an exit in neighborhood with range max_vis (visible
@@ -39,28 +41,8 @@ class PersonAgent(mesa.Agent):
         # best exit according to distance between arrow and exit and move
         # towards this exit. After passing the arrow keep moving in direction
         # of arrow.
-        neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)
-
-        # if self.best_ar and self.pos == self.best_ar.pos:
-        #     self.dir = self.best_ar.dir
-        #     self.arrows.remove(self.best_ar)
-        #     self.best_ar = None
-
-        if vis_ars := self.visible_arrows():
-            self.best_ar = self.find_best_exit(vis_ars)
-            if self.best_ar and (new_pos := self.calc_move(self.best_ar.pos)):
-                self.model.grid.move_agent(self, new_pos)
-        elif self.dir and (new_pos := self.pos_by_dir(self.dir)):
-            self.model.grid.move_agent(self, new_pos)
-        else:
-            self.dir = None
-            # This could probably be more efficient using numpy somehow..
-            # TODO: ^
-            possible_empty = [cell for cell in neighbor_cells
-                              if self.model.grid.is_cell_empty(cell)]
-            if len(possible_empty) != 0:
-                self.model.grid.move_agent(self,
-                                           self.random.choice(possible_empty))
+        next_loc = self.path.pop()
+        self.model.grid.move_agent(self, next_loc)
 
     def pos_by_dir(self, direction):
         neighbor_cells = self.model.grid.get_neighborhood(self.pos, moore=True)

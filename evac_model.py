@@ -53,10 +53,10 @@ class EvacModel(mesa.Model):
             self.schedule.add(p)
 
             # Randomly place agent in grid
-            r_id = np.random.randint(0, len(EMPTY))
-            x, y = EMPTY.pop(r_id)
-            self.grid.position_agent(p, x, y)
-            # self.grid.position_agent(p, 33, 46)
+            # r_id = np.random.randint(0, len(EMPTY))
+            # x, y = EMPTY.pop(r_id)
+            # self.grid.position_agent(p, x, y)
+            self.grid.position_agent(p, 30, 40)
 
     def step(self):
         # Scheduler will execute every agent's step() method
