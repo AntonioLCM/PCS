@@ -4,7 +4,7 @@ In this project our goal is to find a configuration of emergency arrows that lea
 ## Dependencies 
 Make sure you have the following dependencies installed :
 
-[mesa](https://pypi.org/project/Mesa/) - pip install mesa    
+[mesa](https://pypi.org/project/Mesa/) - pip install mesa
 
 [matplotlib](https://matplotlib.org/stable/users/installing/index.html) - pip install matplotlib
 
