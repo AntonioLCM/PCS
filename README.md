@@ -1,6 +1,6 @@
 # Agent-based evacuation model based on lab42
 ## Overview
-In this project our goal was to find a different configuration of emergency arrows that leads to a faster evacuation compared to the current configuration of arrows. The pathfinding algorithm used in our evacuation model is the a* algorithm, the visualization of the simulation is done with mesa.
+In this project our goal was to find a configuration of emergency arrows that leads to a faster evacuation compared to the current configuration of arrows. The pathfinding algorithm used in our evacuation model is the a* algorithm, the visualization of the simulation is done with mesa.
 
 ## Usage and dependencies
 1. Clone the repository
