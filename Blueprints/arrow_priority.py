@@ -38,4 +38,3 @@ def exit_priority(arrow, exits):
             exit_priority = [(n, m), (x, y)]    # save both arrow and exit
 
     return exit_priority
-    
