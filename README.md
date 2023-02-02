@@ -8,7 +8,7 @@ Make sure you have the following dependencies installed :
 
 [matplotlib](https://matplotlib.org/stable/users/installing/index.html) - pip install matplotlib
 
-[pillow](https://pypi.org/project/Pillow/) - pip install pillow
+[pillow](https://pillow.readthedocs.io/en/latest/installation.html) - pip install pillow
 
 ## Running mesa visualization 
 1. Clone the repository 
