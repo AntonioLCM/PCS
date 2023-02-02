@@ -40,7 +40,7 @@ def return_path(current_node,maze):
     for i in range(len(path)):
         result[path[i][0]][path[i][1]] = start_value
         start_value += 1
-    return result
+    return path
 
 
 def search(maze, cost, start, end):
@@ -208,18 +208,19 @@ def main():
     cost = 1
 
     path = search(maze,cost, start, end)
-    path_array = np.array(path)
-    maxi = np.amax(path_array)
+    #path_array = np.array(path)
+    #maxi = np.amax(path_array)
     
-    path_list = []
-    for i in range(maxi + 1):
-        point = np.where(path_array==i)
-        point= list(zip(point[0], point[1]))
+    #path_list = []
+    #for i in range(maxi + 1):
+    #    point = np.where(path_array==i)
+    #    point= list(zip(point[0], point[1]))
 
-        path_list.append(point)
+    #    path_list.append(point)
     #ath2 = astar(grid, (130,17), (18,71))
     #print(path1)
-    print(path_list)
+    print(path)
+    return(path)
 
 if __name__ == '__main__':
     main()
