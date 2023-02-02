@@ -4,10 +4,6 @@ team    : Team 8-1
 project : PCS
 """
 
-from PIL import Image
-import numpy as np
-import matplotlib.pyplot as plt
-
 
 def get_wall_locations(img_array, save=1):
     """
@@ -27,6 +23,4 @@ def get_wall_locations(img_array, save=1):
         with open("wall_cood.txt", 'w') as f:           # to save file
             for line in list_wall:                      # wall_cood.txt
                 f.write(f"{line}\n")
-
-    # print(list_wall)
     return list_wall
