@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def resize_image(image='Original Blueprints/blueprint1_remade.png',
+def resize_image(image='Blueprints/Original Blueprints/blueprint1_remade.png',
                  resampling=1,
                  basewidth=200):
     """
@@ -35,6 +35,6 @@ def resize_image(image='Original Blueprints/blueprint1_remade.png',
                                    Image.LANCZOS)
 
     # save image
-    resized_image.save('Resized Blueprints/blueprint1_resized.png')
+    resized_image.save('Blueprints/Resized Blueprints/blueprint1_resized.png')
 
     return resized_image
