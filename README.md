@@ -15,7 +15,7 @@ Make sure you have the following dependencies installed :
 2. Navigate to the cloned project directory
 3. To run the mesa visualization with the improved arrow configuration you can run the evac_model_viz.py file. ($ python3 evac_model_viz.py)
 4. Press start on the top right corner to run the simulation.
-5. (optional) Change the slider to 20 for a faster simulation.
+5. (optional) Change the slider to 20 fps for a faster simulation.
 
 ## Reproducing representative image
 To reproduce the representative image "representative_img.png" follow these steps:
