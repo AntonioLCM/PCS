@@ -52,9 +52,44 @@ class EvacModel(mesa.Model):
 
         # Initialize persons in a loop
         # Random placement on empty cell within 'building'
-        for uid in range(self.person_agents):
-            p = PersonAgent(uid, self)
-            self.schedule.add(p)
+        # for uid in range(self.person_agents):
+        p = PersonAgent(0, self, (35, 12), (72, 29))
+        q = PersonAgent(1, self, (34, 8), (72, 29))
+        z = PersonAgent(2, self, (137, 183), (80, 158))
+        w = PersonAgent(3, self, (93, 158), (77, 171))
+        a = PersonAgent(4, self, (15, 130), (62, 33))
+        x = PersonAgent(5, self, (13, 25), (62, 33))
+        i = PersonAgent(6, self, (44, 15), (72, 29))
+        j = PersonAgent(7, self, (106, 60), (77, 171))
+        o = PersonAgent(8, self, (132, 108), (72, 29))
+        g = PersonAgent(9, self, (91, 20), (72, 29))
+        c = PersonAgent(10, self, (144, 84), (62, 33))
+        b = PersonAgent(11, self, (139, 36), (62, 33))
+        y = PersonAgent(12, self, (44, 190), (80, 158))
+        k = PersonAgent(13, self, (56, 177), (77, 171))
+        v = PersonAgent(14, self, (25, 190), (80, 158))
+        u = PersonAgent(15, self, (13, 155), (62, 33))
+        d = PersonAgent(16, self, (16, 65), (72, 29))
+        h = PersonAgent(17, self, (118, 20), (72, 29))
+
+        self.schedule.add(p)
+        self.schedule.add(q)
+        self.schedule.add(z)
+        self.schedule.add(w)
+        self.schedule.add(a)
+        self.schedule.add(x)
+        self.schedule.add(i)
+        self.schedule.add(j)
+        self.schedule.add(o)
+        self.schedule.add(g)
+        self.schedule.add(c)
+        self.schedule.add(b)
+        self.schedule.add(y)
+        self.schedule.add(k)
+        self.schedule.add(v)
+        self.schedule.add(u)
+        self.schedule.add(d)
+        self.schedule.add(h)
 
             # Randomly place agent in grid
             # r_id = np.random.randint(0, len(EMPTY))
@@ -63,7 +98,25 @@ class EvacModel(mesa.Model):
             # x, y = PERSON_LOCATIONS[uid]
             # print(uid, " ", x, y)
 
-            self.grid.position_agent(p, 40, 40)
+        self.grid.position_agent(p, 35, 12)
+        self.grid.position_agent(q, 34, 8)
+        self.grid.position_agent(z, 137, 183)
+        self.grid.position_agent(w, 93, 158)
+        self.grid.position_agent(a, 15, 130)
+        self.grid.position_agent(x, 13, 25)
+        self.grid.position_agent(i, 44, 15)
+        self.grid.position_agent(j, 106, 60)
+        self.grid.position_agent(o, 132, 108)
+        self.grid.position_agent(g, 91, 20)
+        self.grid.position_agent(c, 144, 84)
+        self.grid.position_agent(b, 139, 36)
+        self.grid.position_agent(y, 44, 190)
+        self.grid.position_agent(k, 56, 177)
+        self.grid.position_agent(v, 25, 190)
+        self.grid.position_agent(u, 13, 155)
+        self.grid.position_agent(d, 16, 65)
+        self.grid.position_agent(h, 118, 20)
+
             # self.grid.position_agent(p, x, y)
 
     def step(self):
