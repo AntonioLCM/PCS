@@ -32,10 +32,9 @@ def astar(maze, start, end):
 
     # Add the start node
     open_list.append(start_node)
-
     # Loop until you find the end
     while len(open_list) > 0:
-
+        
         # Get the current node
         current_node = open_list[0]
         current_index = 0
@@ -82,9 +81,11 @@ def astar(maze, start, end):
         for child in children:
 
             # Child is on the closed list
+            is_closed = False
             for closed_child in closed_list:
                 if child == closed_child:
-                    continue
+                    is_closed = True
+            if is_closed : continue
 
             # Create the f, g, and h values
             child.g = current_node.g + 1
@@ -98,6 +99,7 @@ def astar(maze, start, end):
 
             # Add the child to the open list
             open_list.append(child)
+
 
 
 def main():
@@ -119,16 +121,27 @@ def main():
     #poppetje16 = [(188,16), (18,71)]
     #poppetje17 = [(70,45), (18,71)]
 
-    grid = image_to_array()
+    grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    #start = (70, 18)
-    #end = (30, 40)
 
-    path1 = astar(grid, (38,15), (181,78))
 
-    path2 = astar(grid, (130,17), (18,71))
-    print(path1)
-    print(path2)
+    start = (0,0)
+    end = (0,9)
+    print("start")
+    path = astar(grid, start, end)
+
+    #path2 = astar(grid, (130,17), (18,71))
+    print(path)
+    #print(path2)
 
 if __name__ == '__main__':
     main()
