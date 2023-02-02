@@ -102,17 +102,17 @@ def astar(maze, start, end):
 
 
 
-def main():
+def main(start, end):
     #poppetje1 = [(94,133), (18,71)]
-    #poppetje2 = [(106,140), (18,71)]
-    #poppetje3 = [(79,98), (18,71)]
-    #poppetje4 = [(164,139), (181,77)]
-    #poppetje5 = [(157,63), (181,77)]
+    #poppetje2 = [(136, 104), (18,71)]
+    #poppetje3 = [(106, 82), (18,71)]
+    #poppetje4 = [(140, 166), (181,77)]
+    #poppetje5 = [(63, 157), (181,77)]
     #poppetje6 = [(187,105), (181,77)]
     #poppetje7 = [(57,140), (181,77)]
     #poppetje8 = [(58,105), (181,77)]
     #poppetje9 = [(70,105), (181,77)]
-    #poppetje10 = [(14,92), (18,71)]
+    #poppetje10 = [(93, 19), (18,71)]
     #poppetje11 = [(44,83), (18,71)]
     #poppetje12 = [(94,37), (181,77)]
     #poppetje13 = [(128,16), (18,71)]
@@ -134,14 +134,15 @@ def main():
 
 
 
+    # path1 = astar(grid, (38,15), (181,78))
     start = (0,0)
     end = (0,9)
     print("start")
     path = astar(grid, start, end)
 
-    #path2 = astar(grid, (130,17), (18,71))
-    print(path)
-    #print(path2)
+    path2 = astar(grid, (130,17), (18,71))
+    print(path1)
+    print(path2)
 
 if __name__ == '__main__':
     main()

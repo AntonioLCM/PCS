@@ -28,7 +28,7 @@ class PersonAgent(mesa.Agent):
         self.dir = None
         self.arrows = ARROWS
         self.best_ar = None
-        self.path = pf.main()
+        self.path = pf.main((40, 40), (44, 45))
 
     def _sees_exit(self):
         # Check if there is an exit in neighborhood with range max_vis (visible
@@ -41,7 +41,9 @@ class PersonAgent(mesa.Agent):
         # best exit according to distance between arrow and exit and move
         # towards this exit. After passing the arrow keep moving in direction
         # of arrow.
-        next_loc = self.path.pop()
+        # self.model.grid.move_agent(self, next_loc)
+
+        next_loc = self.path.pop(0)
         self.model.grid.move_agent(self, next_loc)
 
     def pos_by_dir(self, direction):
