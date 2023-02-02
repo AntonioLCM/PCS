@@ -32,6 +32,7 @@ def agent_portrayal(agent):
     return portrayal
 
 
+# Gridsize 151 x 200, on 800 x 800 canvas
 grid = mesa.visualization.CanvasGrid(agent_portrayal, 151, 200, 800, 800)
 
 chart = mesa.visualization.ChartModule([{"Label": "Exit1", "Color": "Black"},
