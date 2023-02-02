@@ -180,10 +180,12 @@ def search(maze, cost, start, end):
             # Add the child to the yet_to_visit list
             yet_to_visit_list.append(child)
 
-def main():
-    #poppetje1 = [(94,133), (18,71)]
-    #poppetje2 = [(136, 104), (18,71)]
+def main(start, end):
+    #poppetje1 = [(35,12), (73,18)]
+    #poppetje2 = [(34,8), (73,18)]
+    #poppetje? = [(137, 183), (80,158)]
     #poppetje3 = [(106, 82), (18,71)]
+
     #poppetje4 = [(140, 166), (181,77)]
     #poppetje5 = [(63, 157), (181,77)]
     #poppetje6 = [(187,105), (181,77)]
@@ -203,8 +205,8 @@ def main():
 
 
     # path1 = astar(grid, (38,15), (181,78))
-    start = [40,40]
-    end = [128,162]
+    # start = [35,12]
+    # end = [80,158]
     cost = 1
 
     path = search(maze,cost, start, end)
@@ -220,7 +222,7 @@ def main():
     #ath2 = astar(grid, (130,17), (18,71))
     #print(path1)
     print(path)
-    return(path)
+    return path
 
 if __name__ == '__main__':
     main()
