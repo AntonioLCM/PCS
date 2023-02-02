@@ -27,7 +27,7 @@ def agent_portrayal(agent):
 
     if isinstance(agent, PersonAgent):
         portrayal["Shape"] = "circle"
-        portrayal["r"] = .5
+        portrayal["r"] = 2
 
     return portrayal
 
