@@ -41,7 +41,7 @@ class EvacModel(mesa.Model):
         # Activate all agents in random order each step
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
-        self.datacollector = DataCollector(model_reporters={
+        self.datacollector = DataCollector(model_reporters={ "agentCount": lambda m: m.schedule.get_agent_count()-10869,
                                            "Exit1": lambda m: m.counter_EXIT1, "Exit2": lambda m: m.counter_EXIT2, "Exit3": lambda m: m.counter_EXIT3, "Exit4": lambda m: m.counter_EXIT4})
 
         # Initialize walls
