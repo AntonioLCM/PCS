@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 model = EvacModel(N=5000, width=151, height=200)
-model.run_model(steps=1000)
+model.run_model(steps=215)
 
 data = model.datacollector.get_model_vars_dataframe()
 
