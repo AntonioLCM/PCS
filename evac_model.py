@@ -6,28 +6,27 @@
 
 import mesa
 from mesa.datacollection import DataCollector
-import numpy as np
 from person_agent import PersonAgent
 from wall_agent import WallAgent
 
-# make a list of integer tuples from the wall_cood txt file, make sure to run
-# blueprint_converter.py to get the correct wall_cood.txt file in your
-# directory
+# Make a list of integer tuples from the wall_cood txt file, make sure to run
+# blueprint_converter.py to get the correct wall_cood.txt file in the
+# Blueprints directory
 with open('Blueprints/wall_cood.txt') as f:
-    mylist = [eval(i.strip()) for i in f]
-WALLS = mylist
+    wall_list = [eval(i.strip()) for i in f]
+WALLS = wall_list
+
+NUM_WALLS = len(WALLS)
 
 # Find all empty spaces within building. (building is smaller than image grid)
-# TODO: remove inaccesible SPACES from EMPTY as well.. There should be
-#       a better way than finding the coordinates and hardcoding them..
-#       probably
 EMPTY = list(set([(x, y) for x in range(4, 147) for y in range(4, 196)])
              - set(WALLS))
 
 PERSON_LOCATIONS = [(93, 19), (136, 104), (106, 82), (140, 166), (63, 157)]
-                    # (187,105), (57,140), (58,105), (70,105), (14,92),
-                    # (44,83), (94,37), (128,16), (36,16), (68,17),
-                    # (188,16), (70,45)]
+# (187,105), (57,140), (58,105), (70,105), (14,92),
+# (44,83), (94,37), (128,16), (36,16), (68,17),
+# (188,16), (70,45)]
+
 
 class EvacModel(mesa.Model):
     def __init__(self, N, width, height):
@@ -36,13 +35,16 @@ class EvacModel(mesa.Model):
         self.counter_EXIT2 = 0
         self.counter_EXIT3 = 0
         self.counter_EXIT4 = 0
-        # Default maximum visible distance
-        self.max_vis = 100
+
         # Activate all agents in random order each step
         self.schedule = mesa.time.RandomActivation(self)
         self.grid = mesa.space.SingleGrid(width, height, False)
-        self.datacollector = DataCollector(model_reporters={ "agentCount": lambda m: m.schedule.get_agent_count()-10869,
-                                           "Exit1": lambda m: m.counter_EXIT1, "Exit2": lambda m: m.counter_EXIT2, "Exit3": lambda m: m.counter_EXIT3, "Exit4": lambda m: m.counter_EXIT4})
+        self.datacollector = DataCollector(model_reporters={
+                                           "agentCount": lambda m: m.schedule.get_agent_count() - (NUM_WALLS + 1),
+                                           "Exit1": lambda m: m.counter_EXIT1,
+                                           "Exit2": lambda m: m.counter_EXIT2,
+                                           "Exit3": lambda m: m.counter_EXIT3,
+                                           "Exit4": lambda m: m.counter_EXIT4})
 
         # Initialize walls
         for pos in WALLS:
@@ -91,12 +93,8 @@ class EvacModel(mesa.Model):
         self.schedule.add(d)
         self.schedule.add(h)
 
-            # Randomly place agent in grid
-            # r_id = np.random.randint(0, len(EMPTY))
-            # x, y = EMPTY.pop(r_id)
-            # self.grid.position_agent(p, x, y)
-            # x, y = PERSON_LOCATIONS[uid]
-            # print(uid, " ", x, y)
+        # x, y = PERSON_LOCATIONS[uid]
+        # print(uid, " ", x, y)
 
         self.grid.position_agent(p, 35, 12)
         self.grid.position_agent(q, 34, 8)
@@ -117,17 +115,16 @@ class EvacModel(mesa.Model):
         self.grid.position_agent(d, 16, 65)
         self.grid.position_agent(h, 118, 20)
 
-            # self.grid.position_agent(p, x, y)
+        # self.grid.position_agent(p, x, y)
 
     def step(self):
         # Scheduler will execute every agent's step() method
         # schedule.agents !!!
         self.datacollector.collect(self)
         self.schedule.step()
-        
+
     def run_model(self, steps):
         # Because the model has no inherent end conditions,
         # the user must specify how many steps to run it for.
         for i in range(steps):
             self.step()
-            
