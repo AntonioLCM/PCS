@@ -2,7 +2,7 @@
     Team: Eight minus one
     Description: Run model a specified amount of steps and plot the data. Data is
     collected from the model's datacollector, which stores the amount of people that
-    have went through each exit and the total amount of people on the grid for each step.
+    have gone through each exit and the total amount of people on the grid for each step.
 """
 from evac_model import EvacModel
 import matplotlib.pyplot as plt
