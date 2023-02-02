@@ -21,4 +21,4 @@ class WallAgent(mesa.Agent):
 
     def step(self):
         # Define step behavior
-        self.move()
+        pass
