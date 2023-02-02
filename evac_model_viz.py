@@ -10,6 +10,9 @@ from wall_agent import WallAgent
 from person_agent import PersonAgent
 
 
+NUM_AGENTS = 18
+
+
 # Define what the agents should look like in the visualization dependent
 # on their type.
 def agent_portrayal(agent):
@@ -41,7 +44,7 @@ chart = mesa.visualization.ChartModule([{"Label": "Exit1", "Color": "Black"},
                                         {"Label": "Exit4", "Color": "yellow"}],
                                        data_collector_name='datacollector')
 server = mesa.visualization.ModularServer(
-    EvacModel, [grid, chart], "Evacuation Model", {"N": 1,
+    EvacModel, [grid, chart], "Evacuation Model", {"N": NUM_AGENTS,
                                                    "width": 151,
                                                    "height": 200}
 )
