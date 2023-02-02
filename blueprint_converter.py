@@ -4,10 +4,6 @@ team    : Team 8-1
 project : PCS
 """
 
-from PIL import Image
-import numpy as np
-import matplotlib.pyplot as plt
-
 from Blueprints.get_wall_locations import get_wall_locations
 from Blueprints.image_to_array import image_to_array
 from Blueprints.resize_image import resize_image
