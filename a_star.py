@@ -220,6 +220,7 @@ def main():
     #ath2 = astar(grid, (130,17), (18,71))
     #print(path1)
     print(path_list)
+    return path_list
 
 if __name__ == '__main__':
     main()
