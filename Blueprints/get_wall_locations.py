@@ -20,7 +20,7 @@ def get_wall_locations(img_array, save=1):
                 list_wall.append((n, m))                # is found
 
     if save == 1:                                       # save coordinates
-        with open("wall_cood.txt", 'w') as f:           # to save file
+        with open("Blueprints/wall_cood.txt", 'w') as f:           # to save file
             for line in list_wall:                      # wall_cood.txt
                 f.write(f"{line}\n")
     return list_wall
