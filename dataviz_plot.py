@@ -1,6 +1,4 @@
 from evac_model import EvacModel
-from mesa.datacollection import DataCollector
-import numpy as np
 import matplotlib.pyplot as plt
 
 model = EvacModel(N=5000, width=151, height=200)
